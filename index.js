@@ -53,11 +53,13 @@ _.extend(RaspberryCam.prototype, {
         // Setup global http callback
         RaspberryCam = function() {
             // Aspect ration 1 1/3
-            system('/usr/bin/raspistill --width 500 --height 375 --quality 90 --encoding jpg --output /var/tmp/raspicam.jpeg')
+            system('/usr/bin/raspistill --width 500 --height 375 --quality 90 --encoding jpg --output /opt/z-way-server/automation/tmp/current.jpg')
+            // TODO stat last image
             // TODO --exposure night for late hours
             // TODO --hflip --vflip
             // TODO link /var/tmp/raspicam.jpeg to modules/RaspberryCam/current.jpg
-            var image = fs.load('modules/RaspberryCam/current.jpg');
+            // var image = fs.load('modules/RaspberryCam/current.jpg');
+            var image = fs.load('tmp/current.jpg');
             if (typeof image !== 'string') {
                 return {
                     status: 404,
