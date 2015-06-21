@@ -1,0 +1,59 @@
+{
+    "dependencies": [],
+    "singleton": true,
+    "category": "surveillance",
+    "author": "Maroš Kollár",
+    "homepage": "http://k-1.com",
+    "icon": "",
+    "version": "1.0.0",
+    "maturity": "stable",
+    "repository": {
+        "type": "git",
+        "source": "https://github.com/maros/Zway-RaspberryCam"
+    },
+    "defaults": {
+        "title": "__title__",
+        "description": "__description__",
+        "flip": false
+    },
+    "schema": {
+        "type": "object",
+        "properties": {
+            "flip": {
+                "helper": "__flip_helper__",
+                "enum": [true, false],
+                "required": true
+            },
+            "doorDevices": {
+                "type": "array",
+                "items": {
+                    "field": "enum",
+                    "datasource": "namespaces",
+                    "enum": "namespaces:devices_doorlock:deviceId,namespaces:devices_switchBinary:deviceId",
+                    "required": false
+                }
+            }
+        },
+        "required": true
+    },
+    "options": {
+        "fields": {
+            "flip": {
+                "label": "__flip_label__",
+                "type": "select",
+                "optionLabels": ["On", "Off"]
+            },
+            "doorDevices": {
+                "label": "__presence_device_label__",
+                "fields": {
+                    "item": {
+                        "type": "select",
+                        "datasource": "namespaces",
+                        "field": "optionLabels",
+                        "optionLabels": "namespaces:devices_doorlock:deviceName,namespaces:devices_switchBinary:deviceName"
+                    }
+                }
+            }
+        }
+    }
+}
