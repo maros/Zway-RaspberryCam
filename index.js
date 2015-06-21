@@ -50,27 +50,32 @@ _.extend(RaspberryCam.prototype, {
             });
         };
         
-        this.url  = "/RaspberryCam/"+ this.id;
-        RaspberryCam = {};
-        RaspberryCam[this.id] = function() {
+        // Setup global http callback
+        RaspberryCam = function() {
             // Aspect ration 1 1/3
-            // --exposure night for late hours
-            system('raspistill --width 500 --height 375 --quality 90 --encoding jpg --output /var/tmp/raspicam.jpeg')
-            var image = fs.load('/var/tmp/raspicam.jpeg');
+            system('/usr/bin/raspistill --width 500 --height 375 --quality 90 --encoding jpg --output /var/tmp/raspicam.jpeg')
+            // TODO --exposure night for late hours
+            // TODO --hflip --vflip
+            // TODO link /var/tmp/raspicam.jpeg to modules/RaspberryCam/current.jpg
+            var image = fs.load('modules/RaspberryCam/current.jpg');
             if (typeof image !== 'string') {
                 return {
                     status: 404,
-                    contentType: 'image/jpeg',
+                    headers: {
+                        contentType: 'image/jpeg'
+                    },
                     body: 'xxx'
                 }
             }
             return {
                 status: 200,
-                contentType: 'image/jpeg',
+                headers: {
+                    contentType: 'image/jpeg'
+                },
                 body: image
             }
         };
-        allowExternalAccess('RaspberryCam.'+this.id);
+        ws.allowExternalAccess('RaspberryCam');
         
         this.vDev = this.controller.devices.create({
             deviceId: vDevId,
@@ -83,7 +88,7 @@ _.extend(RaspberryCam.prototype, {
             },
             overlay: {
                 metrics: {
-                    url: this.url,
+                    url: "/RaspberryCam",
                 }
             },
             moduleId: this.id
