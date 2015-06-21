@@ -52,27 +52,40 @@ _.extend(RaspberryCam.prototype, {
         
         // Setup global http callback
         RaspberryCam = function() {
+            // TODO create tmp/
             // Aspect ration 1 1/3
-            system('/usr/bin/raspistill --width 500 --height 375 --quality 90 --encoding jpg --output /opt/z-way-server/automation/tmp/current.jpg')
-            // TODO stat last image
+            var options = {
+                width:      500,
+                height:     375,
+                quality:    90,
+                encoding:   'jpeg',
+                output:     '/opt/z-way-server/automation/tmp/current.jpg'
+            };
+            if (config.flip === true) {
+                options.hflip = true;
+                options.vflip = true;
+            }
             // TODO --exposure night for late hours
-            // TODO --hflip --vflip
-            // TODO link /var/tmp/raspicam.jpeg to modules/RaspberryCam/current.jpg
-            // var image = fs.load('modules/RaspberryCam/current.jpg');
+            var command = '/usr/bin/raspistill';
+            command = command + ' ' + _.map(options, function(value,key) {
+                return '--' + key + (typeof(value) === 'boolean' ? '':' '+value)
+            }).join(' ');
+            system(command)
             var image = fs.load('tmp/current.jpg');
             if (typeof image !== 'string') {
+                image = fs.load('modules/RaspberryCam/notfound.jpg');
                 return {
                     status: 404,
                     headers: {
-                        contentType: 'image/jpeg'
+                       'Content-Type': 'image/jpeg'
                     },
-                    body: 'xxx'
+                    body: image
                 }
             }
             return {
                 status: 200,
                 headers: {
-                    contentType: 'image/jpeg'
+                    'Content-Type': 'image/jpeg'
                 },
                 body: image
             }
