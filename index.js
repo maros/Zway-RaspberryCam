@@ -73,11 +73,11 @@ _.extend(RaspberryCam.prototype, {
             system(command)
             var image = fs.load('tmp/current.jpg');
             if (typeof image !== 'string') {
-                image = fs.load('modules/RaspberryCam/notfound.jpg');
+                image = fs.load('modules/RaspberryCam/noimage.jpg');
                 return {
                     status: 404,
                     headers: {
-                       'Content-Type': 'image/jpeg'
+                       'Content-Type': 'image/png'
                     },
                     body: image
                 }
