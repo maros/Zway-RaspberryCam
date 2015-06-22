@@ -85,7 +85,8 @@ _.extend(RaspberryCam.prototype, {
             return {
                 status: 200,
                 headers: {
-                    'Content-Type': 'image/jpeg'
+                    'Content-Type': 'image/jpeg',
+                    'cache-control': 'public, max-age=0, no-cache'
                 },
                 body: image
             }
