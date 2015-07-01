@@ -58,7 +58,7 @@ _.extend(RaspberryCam.prototype, {
                 width:      500,
                 height:     375,
                 quality:    90,
-                encoding:   'jpeg',
+                //encoding:   'jpeg',
                 output:     '/opt/z-way-server/automation/tmp/current.jpg'
             };
             if (config.flip === true) {
