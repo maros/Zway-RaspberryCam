@@ -4,7 +4,7 @@
     "category": "surveillance",
     "author": "Maroš Kollár",
     "homepage": "http://k-1.com",
-    "icon": "",
+    "icon": "icon.png",
     "version": "1.0.0",
     "maturity": "stable",
     "repository": {
