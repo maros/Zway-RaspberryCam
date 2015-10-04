@@ -7,6 +7,7 @@
     "icon": "icon.png",
     "version": "1.0.0",
     "maturity": "stable",
+    "moduleName": "RaspberryCam",
     "repository": {
         "type": "git",
         "source": "https://github.com/maros/Zway-RaspberryCam"

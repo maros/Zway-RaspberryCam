@@ -5,7 +5,7 @@ Zway camera module for the Raspberry camera module.
 # Configuration
 
 In order to get images from the camera you need to run the following commands
-in the raspberry shell:
+on the raspberry shell:
 
  mkdir /opt/z-way-server/automation/tmp/
  echo '/usr/bin/raspistill' >> /opt/z-way-server/automation/.syscommands

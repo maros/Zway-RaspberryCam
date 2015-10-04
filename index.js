@@ -38,7 +38,6 @@ _.extend(RaspberryCam.prototype, {
         var opener = function(command) {
             config.doorDevices.forEach(function(el) {
                 var vDev = that.controller.devices.get(el);
-                
                 if (vDev) {
                     var type = vDev.get("deviceType");
                     if (type === "switchBinary") {
