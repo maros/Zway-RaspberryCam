@@ -1,7 +1,7 @@
 {
-	"title":"RaspberryPI camera module",
-	"description":"Support the RaspberryPI camera module",
-	"flip_label":"Flip image",
-	"flip_helper":"This setting flips the image if the camera module is placed upside down",
-	"presence_device_label":"Door device"
+    "title":"RaspberryPI camera module",
+    "description":"Support the RaspberryPI camera module",
+    "flip_label":"Flip image",
+    "flip_helper":"This setting flips the image if the camera module is placed upside down",
+    "presence_device_label":"Door device"
 }

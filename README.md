@@ -1,6 +1,6 @@
 # Zway-RaspberryCam
 
-Zway camera module for the Raspberry camera module.
+Zway camera device for the Raspberry camera module.
 
 # Configuration
 
