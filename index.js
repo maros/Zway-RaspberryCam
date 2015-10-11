@@ -33,8 +33,6 @@ _.extend(RaspberryCam.prototype, {
         var that = this,
             vDevId = "CameraDevice_" + this.id;
         
-        console.log(this.url);      
-        
         var opener = function(command) {
             config.doorDevices.forEach(function(el) {
                 var vDev = that.controller.devices.get(el);
