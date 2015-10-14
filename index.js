@@ -112,7 +112,7 @@ _.extend(RaspberryCam.prototype, {
         
         if (this.vDev) {
             this.controller.devices.remove(this.vDev.id);
-            this.vDev = null;
+            this.vDev = undefined;
         }
     }
 });
