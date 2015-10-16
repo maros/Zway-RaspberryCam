@@ -24,15 +24,6 @@
                 "helper": "__flip_helper__",
                 "enum": [true, false],
                 "required": true
-            },
-            "doorDevices": {
-                "type": "array",
-                "items": {
-                    "field": "enum",
-                    "datasource": "namespaces",
-                    "enum": "namespaces:devices_doorlock:deviceId,namespaces:devices_switchBinary:deviceId",
-                    "required": false
-                }
             }
         },
         "required": true
@@ -43,17 +34,6 @@
                 "label": "__flip_label__",
                 "type": "select",
                 "optionLabels": ["On", "Off"]
-            },
-            "doorDevices": {
-                "label": "__presence_device_label__",
-                "fields": {
-                    "item": {
-                        "type": "select",
-                        "datasource": "namespaces",
-                        "field": "optionLabels",
-                        "optionLabels": "namespaces:devices_doorlock:deviceName,namespaces:devices_switchBinary:deviceName"
-                    }
-                }
             }
         }
     }

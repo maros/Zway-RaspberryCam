@@ -33,20 +33,6 @@ _.extend(RaspberryCam.prototype, {
         var that = this,
             vDevId = "CameraDevice_" + this.id;
         
-        var opener = function(command) {
-            config.doorDevices.forEach(function(el) {
-                var vDev = that.controller.devices.get(el);
-                if (vDev) {
-                    var type = vDev.get("deviceType");
-                    if (type === "switchBinary") {
-                        vDev.performCommand(command == "open" ? "on" : "off");
-                    } else if (type === "doorlock") {
-                        vDev.performCommand(command);
-                    }
-                }
-            });
-        };
-        
         // Setup global http callback
         RaspberryCam = function() {
             // TODO create tmp/
