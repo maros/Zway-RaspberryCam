@@ -5,7 +5,7 @@
     "author": "Maroš Kollár",
     "homepage": "http://k-1.com",
     "icon": "icon.png",
-    "version": "1.0.0",
+    "version": "1.00",
     "maturity": "stable",
     "moduleName": "RaspberryCam",
     "repository": {
