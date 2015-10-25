@@ -4,17 +4,6 @@ Zway camera device for the Raspberry camera module.
 
 # Configuration
 
-In order to get images from the camera you need to run the following commands
-on the raspberry shell:
-
- mkdir /opt/z-way-server/automation/tmp/
- echo '/usr/bin/raspistill' >> /opt/z-way-server/automation/.syscommands
-
-Furthermore it is recommended to mount the tmp directory using tmpfs to extend
-the live of the SD card. Add the following line to /etc/fstab
-
- tmpfs /opt/z-way-server/automation/tmp tmpfs nodev,nosuid,size=10M 0 0
-
 ## flip
 
 Sets image flip
@@ -26,6 +15,37 @@ This module creates a virtual camera device.
 # Events
 
 No events are emitted
+
+# Installation
+
+```shell
+# Create image directory
+mkdir /opt/z-way-server/automation/tmp/
+# Allow module to call raspistill command
+echo '/usr/bin/raspistill' >> /opt/z-way-server/automation/.syscommands
+cd /opt/z-way-server/automation/modules
+git clone https://github.com/maros/Zway-RaspberryCam.git RaspberryCam --branch latest
+```
+
+Furthermore it is recommended to mount the tmp directory using tmpfs to extend
+the live of the SD card. Add the following line to /etc/fstab
+
+``
+ tmpfs /opt/z-way-server/automation/tmp tmpfs nodev,nosuid,size=10M 0 0
+```
+
+To update or install a specific version
+```shell
+cd /opt/z-way-server/automation/modules/RaspberryCam
+git fetch --tags
+# For latest released version
+git checkout tags/latest
+# For a specific version
+git checkout tags/1.02
+# For development version
+git checkout -b master --track origin/master
+```
+
 
 # License
 
