@@ -73,7 +73,7 @@ RaspberryCam.prototype.init = function (config) {
         };
     };
     
-    ws.allowExternalAccess('RaspberryCamHandler',self.controller.auth.ROLE.USER);
+    ws.allowExternalAccess('RaspberryCamHandler',self.controller.auth.ROLE.LOCAL);
     
     self.vDev = this.controller.devices.create({
         deviceId: vDevId,
