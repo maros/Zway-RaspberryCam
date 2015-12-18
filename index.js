@@ -51,9 +51,13 @@ RaspberryCam.prototype.init = function (config) {
         command = command + ' ' + _.map(options, function(value,key) {
             return '--' + key + (typeof(value) === 'boolean' ? '':' '+value);
         }).join(' ');
+        
+        console.log('[RaspberryCam] Run command '+command);
         system(command);
+        
         var image = fs.load('tmp/current.jpg');
         if (typeof image !== 'string') {
+            console.error('[RaspberryCam] Could not find image');
             image = fs.load('modules/RaspberryCam/noimage.jpg');
             return {
                 status: 404,
@@ -86,7 +90,7 @@ RaspberryCam.prototype.init = function (config) {
         },
         overlay: {
             metrics: {
-                url: "/RaspberryCam",
+                url: "/RaspberryCamHandler",
             }
         },
         moduleId: this.id
