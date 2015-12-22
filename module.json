@@ -22,7 +22,6 @@
         "properties": {
             "flip": {
                 "helper": "__flip_helper__",
-                "enum": [true, false],
                 "required": true
             }
         },
@@ -32,8 +31,8 @@
         "fields": {
             "flip": {
                 "label": "__flip_label__",
-                "type": "select",
-                "optionLabels": ["On", "Off"]
+                "default" : false,
+                "type" : "boolean"
             }
         }
     }
