@@ -46,6 +46,10 @@ git checkout tags/1.02
 git checkout -b master --track origin/master
 ```
 
+Alternatively this module can be installed via the Z-Wave.me app store. Just
+go to Management > App Store Access and add 'k1_beta' access token. However
+you will still need to create the required directories and set the allowed 
+syscommands manually.
 
 # License
 
