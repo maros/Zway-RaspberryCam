@@ -13,8 +13,8 @@
         "source": "https://github.com/maros/Zway-RaspberryCam"
     },
     "defaults": {
-        "title": "__title__",
-        "description": "__description__",
+        "title": "__m_title__",
+        "description": "__m_descr__",
         "flip": false
     },
     "schema": {
