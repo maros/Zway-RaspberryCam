@@ -34,9 +34,16 @@ the live of the SD card. Add the following line to /etc/fstab
  tmpfs /opt/z-way-server/automation/tmp tmpfs nodev,nosuid,size=10M 0 0
 ```
 
-To update or install a specific version
+The prefered way of installing this module is via the "Zwave.me App Store"
+available in 2.2.0 and higher. For stable module releases no access token is 
+required. If you want to test the latest pre-releases use 'k1_beta' as 
+app store access token.
+
+For developers and users of older Zway versions installation via git is 
+recommended.
+
 ```shell
-cd /opt/z-way-server/automation/modules/RaspberryCam
+cd /opt/z-way-server/automation/userModules/RaspberryCam
 git fetch --tags
 # For latest released version
 git checkout tags/latest
