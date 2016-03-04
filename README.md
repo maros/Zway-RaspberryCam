@@ -23,7 +23,7 @@ No events are emitted
 mkdir /opt/z-way-server/automation/tmp/
 # Allow module to call raspistill command
 echo '/usr/bin/raspistill' >> /opt/z-way-server/automation/.syscommands
-cd /opt/z-way-server/automation/modules
+cd /opt/z-way-server/automation/userModules
 git clone https://github.com/maros/Zway-RaspberryCam.git RaspberryCam --branch latest
 ```
 
