@@ -1,6 +1,6 @@
 {
    "flip_helper" : "This setting flips the image if the camera module is placed upside down",
    "flip_label" : "Flip image",
-   "m_descr" : "Support the RaspberryPI camera module<br>Check http:/k-1.com/blob/master/README.md for detailed documentation.",
+   "m_descr" : "Support the RaspberryPI camera module. Make sure to check out the installation how-to under the following link.<br>Check <a href=https://github.com/maros/Zway-RaspberryCam/blob/master/README.md>github.com/maros/Zway-RaspberryCam</a> for detailed documentation.",
    "m_title" : "RaspberryPI camera module"
 }
