@@ -2,6 +2,5 @@
    "flip_helper" : "This setting flips the image if the camera module is placed upside down",
    "flip_label" : "Flip image",
    "m_descr" : "Support the RaspberryPI camera module<br>Check http:/k-1.com/blob/master/README.md for detailed documentation.",
-   "m_title" : "RaspberryPI camera module",
-   "presence_device_label" : "Door device"
+   "m_title" : "RaspberryPI camera module"
 }
