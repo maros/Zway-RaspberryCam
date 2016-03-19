@@ -90,6 +90,7 @@ RaspberryCam.prototype.init = function (config) {
         },
         overlay: {
             metrics: {
+                autoRefresh: true,
                 url: "/RaspberryCamHandler",
             }
         },
