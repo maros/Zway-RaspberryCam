@@ -1,39 +1,39 @@
 {
-    "dependencies": [],
-    "singleton": true,
-    "category": "surveillance",
-    "author": "Maroš Kollár",
-    "homepage": "http://k-1.com",
-    "icon": "icon.png",
-    "version": "1.00",
-    "maturity": "stable",
-    "moduleName": "RaspberryCam",
-    "repository": {
-        "type": "git",
-        "source": "https://github.com/maros/Zway-RaspberryCam"
-    },
-    "defaults": {
-        "title": "__m_title__",
-        "description": "__m_descr__",
-        "flip": false
-    },
-    "schema": {
-        "type": "object",
-        "properties": {
-            "flip": {
-                "helper": "__flip_helper__",
-                "required": true
-            }
-        },
-        "required": true
-    },
-    "options": {
-        "fields": {
-            "flip": {
-                "label": "__flip_label__",
-                "default" : false,
-                "type" : "boolean"
-            }
-        }
-    }
+   "author" : "Maroš Kollár",
+   "category" : "surveillance",
+   "defaults" : {
+      "description" : "__m_descr__",
+      "flip" : false,
+      "title" : "__m_title__"
+   },
+   "dependencies" : [],
+   "homepage" : "http://k-1.com",
+   "icon" : "icon.png",
+   "maturity" : "stable",
+   "moduleName" : "RaspberryCam",
+   "options" : {
+      "fields" : {
+         "flip" : {
+            "default" : false,
+            "label" : "__flip_label__",
+            "type" : "boolean"
+         }
+      }
+   },
+   "repository" : {
+      "source" : "https://github.com/maros/Zway-RaspberryCam",
+      "type" : "git"
+   },
+   "schema" : {
+      "properties" : {
+         "flip" : {
+            "helper" : "__flip_helper__",
+            "required" : true
+         }
+      },
+      "required" : true,
+      "type" : "object"
+   },
+   "singleton" : true,
+   "version" : 1.01
 }
