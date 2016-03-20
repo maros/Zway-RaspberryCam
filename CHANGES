@@ -1,3 +1,9 @@
+1.02 2016 Mar 20, Sun
+    * Fix broken module.json
+    * Update installation manual
+    * Fix description
+    * Update translations
+
 1.01 2016 Mar 19, Sat
     * Set autoRefresh to true
     * Add doc link

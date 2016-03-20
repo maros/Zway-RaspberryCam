@@ -26,13 +26,13 @@
    "schema" : {
       "properties" : {
          "flip" : {
-           "type" : "boolean",
-           "required" : true
+            "required" : true,
+            "type" : "boolean"
          }
       },
       "required" : true,
       "type" : "object"
    },
    "singleton" : true,
-   "version" : 1.01
+   "version" : 1.02
 }
