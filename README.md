@@ -18,22 +18,6 @@ No events are emitted
 
 # Installation
 
-```shell
-# Create image directory
-mkdir /opt/z-way-server/automation/tmp/
-# Allow module to call raspistill command
-echo '/usr/bin/raspistill' >> /opt/z-way-server/automation/.syscommands
-cd /opt/z-way-server/automation/userModules
-git clone https://github.com/maros/Zway-RaspberryCam.git RaspberryCam --branch latest
-```
-
-Furthermore it is recommended to mount the tmp directory using tmpfs to extend
-the live of the SD card. Add the following line to /etc/fstab
-
-``
- tmpfs /opt/z-way-server/automation/tmp tmpfs nodev,nosuid,size=10M 0 0
-```
-
 The prefered way of installing this module is via the "Zwave.me App Store"
 available in 2.2.0 and higher. For stable module releases no access token is 
 required. If you want to test the latest pre-releases use 'k1_beta' as 
@@ -53,10 +37,23 @@ git checkout tags/1.02
 git checkout -b master --track origin/master
 ```
 
-Alternatively this module can be installed via the Z-Wave.me app store. Just
-go to Management > App Store Access and add 'k1_beta' access token. However
-you will still need to create the required directories and set the allowed 
-syscommands manually.
+No matter if you install this module directly via git, or via App Store, 
+you'll need to perform these additional steps to have a working camera
+device.
+
+```shell
+# Create image directory
+mkdir /opt/z-way-server/automation/tmp/
+# Allow module to call raspistill command
+echo '/usr/bin/raspistill' >> /opt/z-way-server/automation/.syscommands
+```
+
+Furthermore it is recommended to mount the tmp directory using tmpfs to extend
+the live of the SD card. Add the following line to /etc/fstab
+
+```
+ tmpfs /opt/z-way-server/automation/tmp tmpfs nodev,nosuid,size=5M 0 0
+```
 
 # License
 
