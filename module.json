@@ -7,16 +7,15 @@
       "title" : "__m_title__"
    },
    "dependencies" : [],
-   "homepage" : "http://k-1.com",
+   "homepage" : "https://github.com/maros/Zway-RaspberryCam",
    "icon" : "icon.png",
    "maturity" : "stable",
    "moduleName" : "RaspberryCam",
    "options" : {
       "fields" : {
          "flip" : {
-            "default" : false,
-            "label" : "__flip_label__",
-            "type" : "boolean"
+            "helper" : "__flip_helper__",
+            "label" : "__flip_label__"
          }
       }
    },
@@ -27,8 +26,8 @@
    "schema" : {
       "properties" : {
          "flip" : {
-            "helper" : "__flip_helper__",
-            "required" : true
+           "type" : "boolean",
+           "required" : true
          }
       },
       "required" : true,
