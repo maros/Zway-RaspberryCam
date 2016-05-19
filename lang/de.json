@@ -2,5 +2,5 @@
    "flip_helper" : "Diese Einstellung dreht das Bild wenn die Kamera kopfüber montiert wurde.",
    "flip_label" : "Bild umdrehen",
    "m_descr" : "Bindet das RaspberryPI Kamera Modul in die UI ein. Unbedingt die Installationsanleitung unter dem folgenden Link beachten. <br>Siehe <a href=https://github.com/maros/Zway-RaspberryCam/blob/master/README.md>github.com/maros/Zway-RaspberryCam</a> für detailliertere Dokumentation.",
-   "m_title" : "RaspberryPI Kamera Modul"
+   "m_title" : "RaspberryPI Kamera"
 }
