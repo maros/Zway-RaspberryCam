@@ -30,7 +30,7 @@ RaspberryCam.prototype.init = function (config) {
     RaspberryCam.super_.prototype.init.call(this, config);
     var self    = this;
     var vDevId  = "CameraDevice_" + this.id;
-    
+
     // Setup global http callback
     RaspberryCamHandler = function() {
         // TODO create tmp/
@@ -51,10 +51,10 @@ RaspberryCam.prototype.init = function (config) {
         command = command + ' ' + _.map(options, function(value,key) {
             return '--' + key + (typeof(value) === 'boolean' ? '':' '+value);
         }).join(' ');
-        
+
         console.log('[RaspberryCam] Run command '+command);
         system(command);
-        
+
         var image = fs.load('tmp/current.jpg');
         if (typeof image !== 'string') {
             console.error('[RaspberryCam] Could not find image');
@@ -76,9 +76,9 @@ RaspberryCam.prototype.init = function (config) {
             body: image
         };
     };
-    
+
     ws.allowExternalAccess('RaspberryCamHandler',self.controller.auth.ROLE.LOCAL);
-    
+
     self.vDev = this.controller.devices.create({
         deviceId: vDevId,
         defaults: {
@@ -100,9 +100,9 @@ RaspberryCam.prototype.init = function (config) {
 
 RaspberryCam.prototype.stop = function () {
     RaspberryCam.super_.prototype.stop.call(this);
-    
+
     var self = this;
-    
+
     if (self.vDev) {
         self.controller.devices.remove(self.vDev.id);
         self.vDev = undefined;
