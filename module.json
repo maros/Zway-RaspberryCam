@@ -7,7 +7,7 @@
       "title" : "__m_title__"
    },
    "dependencies" : [],
-   "homepage" : "https://github.com/maros/Zway-RaspberryCam",
+   "homepage" : "https://github.com/maros/Zway-RaspberryCam/",
    "icon" : "icon.png",
    "maturity" : "stable",
    "moduleName" : "RaspberryCam",
